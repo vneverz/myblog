@@ -1,11 +1,30 @@
-<h1>this is show template <%= params[:id] %> <%= link_to "back", posts_path %></h1>
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header header2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1><%= @post.title %></h1>
+                    <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                    <span class="meta">
+                    <%= link_to "edit", edit_post_path %> |
+                    <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this posts?"} %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-<p><%= @post.title %></p>
-<p><%= @post.body %></p>
-<p><%= link_to "edit", edit_post_path %> |
-       <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this posts?"} %>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><%= @post.body %></p>
+            </div>
+        </div>
+    </div>
+</article>
 
-</p>
 <h2>All Comment:</h2>
 
 <%= render @post.comments.order("created_at DESC") %>
