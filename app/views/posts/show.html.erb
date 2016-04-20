@@ -8,7 +8,7 @@
 </p>
 <h2>All Comment:</h2>
 
-<%= render @post.comments %>
+<%= render @post.comments.order("created_at DESC") %>
 <h2>Leave a Comment:</h2>
 
 <%= form_for [@post, @post.comments.build] do |f|%>

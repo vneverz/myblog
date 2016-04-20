@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # delete "/post/:id" => "posts#destroy"
   # get "/posts/new" => "posts#new", as: :new_post
   # get "/post/:id/edit" => "posts#edit", as: :edit_post
+  root "posts#index"
+  resources :posts
 
   resources :posts do
     resources :comments
