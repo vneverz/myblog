@@ -1,7 +1,4 @@
-
-.panel {
-  background: lightgrey;
-  padding: 15px 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+.lightbg{
+  background-color:rgba(239,240,240, .38);
+  padding: 60px 10px;
 }
